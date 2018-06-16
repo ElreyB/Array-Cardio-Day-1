@@ -23,7 +23,7 @@ const people = ['Beck, Glenn', 'Becker, Carl', 'Beckett, Samuel', 'Beddoes, Mick
 // Array.prototype.filter()
 // 1. Filter the list of inventors for those who were born in the 1500's(
 const bornIn1500 = inventors.filter((inventor) => (inventor.year >= 1500) && (inventor.year < 1600));
-console.log(bornIn1500);
+console.table(bornIn1500);
 
 // Array.prototype.map()
 // 2. Give us an array of the inventors' first and last names
@@ -33,7 +33,7 @@ console.log(firstLastName);
 // Array.prototype.sort()
 // 3. Sort the inventors by birthdate, oldest to youngest
 const oldestToYoungest = inventors.sort((a, b) => a.year > b.year ? -1 : 1);
-// console.log(oldestToYoungest);
+console.table(oldestToYoungest);
 
 // Array.prototype.reduce()
 // 4. How many years did all the inventors live?
@@ -63,7 +63,7 @@ const alpha = people.sort((a, b) => {
   const [bLast, bFirst] = b.split(', ')
   return aLast > bLast ? 1 : -1;
 });
-console.log(alpha);
+console.table(alpha);
 
 // 8. Reduce Exercise
 // Sum up the instances of each of these
@@ -73,5 +73,7 @@ const sumData = data.reduce((acc, name) => {
   acc[name] = (acc[name] || 0) + 1;
   return acc;
 }, {});
+
+const results = [bornIn1500]
 
 console.log(sumData);
